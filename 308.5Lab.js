@@ -49,11 +49,30 @@ Take a number, n, and print every number between 1 and n without using loops. Us
 
 // longest string - can use sort and .length:
 
-function longestText(...texts) {
-    texts.sort((a, b) => a.length - b.length);
-    console.log(texts[texts.length - 1]);
-    return texts[texts.length - 1]
+// function longestText(...texts) {
+//     texts.sort((a, b) => a.length - b.length);
+//     console.log(texts[texts.length - 1]);
+//     return texts[texts.length - 1]
+// }
+
+// longestText("d", "ela", "klsrfmerfelrfm", "", "dksm", "saoekcmddsjshdjshdjhshd", "dsdsdd", "23349");
+
+// create filter function for word length
+
+function wordFilter(wordArr, wordLimit) {
+    let myResult = [];
+    for (const word of wordArr) {
+        if (word.length > wordLimit) {
+            myResult.push(word);
+        }
+        else {
+
+        }
+    }
+    console.log(myResult);
+    return myResult;
 }
 
-longestText("d", "ela", "klsrfmerfelrfm", "", "dksm", "saoekcmddsjshdjshdjhshd", "dsdsdd", "23349");
-
+wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 3);
+wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 1);
+wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 6);

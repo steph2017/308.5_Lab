@@ -93,3 +93,12 @@ let pt2Data = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" }, { i
 let ageSort = pt2Data.sort((a, b) => Number(a.age) - Number(b.age));
 console.log(ageSort);
 
+// find replace and increment with map:
+
+let jobageArr = pt2Data.map((oldObj) => newObj = {
+    id: oldObj.id,
+    name: oldObj.name,
+    job: oldObj.occupation,
+    age: String(Number(oldObj.age) + 1)
+});
+console.log(jobageArr);

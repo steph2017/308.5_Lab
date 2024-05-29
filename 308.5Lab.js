@@ -8,41 +8,52 @@ For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); wou
 Take a number, n, and print every number between 1 and n without using loops. Use recursion.
 */
 
-// Return sum
-function sumNums(...numbers) {
-    let myResult = 0;
-    if (numbers.length == 0) {
-        return console.log("Please enter at least one number.")
-    }
-    else {
-        for (i in numbers) {
-            myResult += numbers[i];
-        }
-        console.log(myResult);
-        return myResult;
-    }
+// // Return sum
+// function sumNums(...numbers) {
+//     let myResult = 0;
+//     if (numbers.length == 0) {
+//         return console.log("Please enter at least one number.")
+//     }
+//     else {
+//         for (i in numbers) {
+//             myResult += numbers[i];
+//         }
+//         console.log(myResult);
+//         return myResult;
+//     }
+// }
+
+// sumNums(5, 10, 15);
+// sumNums();
+
+
+// // return average
+
+// function avgNums(...numbers) {
+//     let myResult = 0;
+//     if (numbers.length == 0) {
+//         return console.log("Please enter at least one number.")
+//     }
+//     else {
+//         for (i in numbers) {
+//             myResult += numbers[i];
+//         }
+//         myResult = myResult / numbers.length;
+//         console.log(myResult);
+//         return myResult;
+//     }
+// }
+
+// avgNums(5, 10, 15);
+// avgNums();
+
+// longest string - can use sort and .length:
+
+function longestText(...texts) {
+    texts.sort((a, b) => a.length - b.length);
+    console.log(texts[texts.length - 1]);
+    return texts[texts.length - 1]
 }
 
-sumNums(5, 10, 15);
-sumNums();
+longestText("d", "ela", "klsrfmerfelrfm", "", "dksm", "saoekcmddsjshdjshdjhshd", "dsdsdd", "23349");
 
-
-// return average
-
-function avgNums(...numbers) {
-    let myResult = 0;
-    if (numbers.length == 0) {
-        return console.log("Please enter at least one number.")
-    }
-    else {
-        for (i in numbers) {
-            myResult += numbers[i];
-        }
-        myResult = myResult / numbers.length;
-        console.log(myResult);
-        return myResult;
-    }
-}
-
-avgNums(5, 10, 15);
-avgNums();

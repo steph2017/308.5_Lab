@@ -8,74 +8,74 @@ For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); wou
 Take a number, n, and print every number between 1 and n without using loops. Use recursion.
 */
 
-// // Return sum
-// function sumNums(...numbers) {
-//     let myResult = 0;
-//     if (numbers.length == 0) {
-//         return console.log("Please enter at least one number.")
-//     }
-//     else {
-//         for (i in numbers) {
-//             myResult += numbers[i];
-//         }
-//         console.log(myResult);
-//         return myResult;
-//     }
-// }
+// Return sum
+function sumNums(...numbers) {
+    let myResult = 0;
+    if (numbers.length == 0) {
+        return console.log("Please enter at least one number.")
+    }
+    else {
+        for (i in numbers) {
+            myResult += numbers[i];
+        }
+        console.log(myResult);
+        return myResult;
+    }
+}
 
-// sumNums(5, 10, 15);
-// sumNums();
+sumNums(5, 10, 15);
+sumNums();
 
 
-// // return average
+// return average
 
-// function avgNums(...numbers) {
-//     let myResult = 0;
-//     if (numbers.length == 0) {
-//         return console.log("Please enter at least one number.")
-//     }
-//     else {
-//         for (i in numbers) {
-//             myResult += numbers[i];
-//         }
-//         myResult = myResult / numbers.length;
-//         console.log(myResult);
-//         return myResult;
-//     }
-// }
+function avgNums(...numbers) {
+    let myResult = 0;
+    if (numbers.length == 0) {
+        return console.log("Please enter at least one number.")
+    }
+    else {
+        for (i in numbers) {
+            myResult += numbers[i];
+        }
+        myResult = myResult / numbers.length;
+        console.log(myResult);
+        return myResult;
+    }
+}
 
-// avgNums(5, 10, 15);
-// avgNums();
+avgNums(5, 10, 15);
+avgNums();
 
-// // longest string - can use sort and .length:
+// longest string - can use sort and .length:
 
-// function longestText(...texts) {
-//     texts.sort((a, b) => a.length - b.length);
-//     console.log(texts[texts.length - 1]);
-//     return texts[texts.length - 1]
-// }
+function longestText(...texts) {
+    texts.sort((a, b) => a.length - b.length);
+    console.log(texts[texts.length - 1]);
+    return texts[texts.length - 1]
+}
 
-// longestText("d", "ela", "klsrfmerfelrfm", "", "dksm", "saoekcmddsjshdjshdjhshd", "dsdsdd", "23349");
+longestText("d", "ela", "klsrfmerfelrfm", "", "dksm", "saoekcmddsjshdjshdjhshd", "dsdsdd", "23349");
 
-// // create filter function for word length
+// create filter function for word length
 
-// function wordFilter(wordArr, wordLimit) {
-//     let myResult = [];
-//     for (const word of wordArr) {
-//         if (word.length > wordLimit) {
-//             myResult.push(word);
-//         }
-//         else {
+function wordFilter(wordArr, wordLimit) {
+    let myResult = [];
+    for (const word of wordArr) {
+        if (word.length > wordLimit) {
+            myResult.push(word);
+        }
+        else {
 
-//         }
-//     }
-//     console.log(myResult);
-//     return myResult;
-// }
+        }
+    }
+    console.log(myResult);
+    return myResult;
+}
 
-// wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 3);
-// wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 1);
-// wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 6);
+wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 3);
+wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 1);
+wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 6);
 
 /* PT 2
 Use callback functions alongside Array methods to accomplish the following:
@@ -114,3 +114,12 @@ console.log(ageSum);
 
 averAge = ageSum / pt2Data.length;
 console.log(averAge);
+
+/**
+It is important to remember that when working with objects in JavaScript, we can either pass those objects into functions by value or by reference. This important distinction changes the way that functions behave, and can have large impacts on the way a program executes.
+For this section, develop functions that accomplish the following:
+Take an object and increment its age field.
+Take an object, make a copy, and increment the age field of the copy. Return the copy.
+For each of the functions above, if the object does not yet contain an age field, create one and set it to 0. Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time.
+Thought experiment: since the Date object is an object, what would happen if we modified it in the copy of the object created in the second function using setTime() or another method? How could we circumvent potentially undesired behavior? 
+*/

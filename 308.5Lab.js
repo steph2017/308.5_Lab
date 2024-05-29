@@ -1,4 +1,4 @@
-/*
+/* PT 1
 write functions that accomplish the following:
 Take an array of numbers and return the sum.
 Take an array of numbers and return the average.
@@ -8,71 +8,88 @@ For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); wou
 Take a number, n, and print every number between 1 and n without using loops. Use recursion.
 */
 
-// Return sum
-function sumNums(...numbers) {
-    let myResult = 0;
-    if (numbers.length == 0) {
-        return console.log("Please enter at least one number.")
-    }
-    else {
-        for (i in numbers) {
-            myResult += numbers[i];
-        }
-        console.log(myResult);
-        return myResult;
-    }
-}
+// // Return sum
+// function sumNums(...numbers) {
+//     let myResult = 0;
+//     if (numbers.length == 0) {
+//         return console.log("Please enter at least one number.")
+//     }
+//     else {
+//         for (i in numbers) {
+//             myResult += numbers[i];
+//         }
+//         console.log(myResult);
+//         return myResult;
+//     }
+// }
 
-sumNums(5, 10, 15);
-sumNums();
+// sumNums(5, 10, 15);
+// sumNums();
 
 
-// return average
+// // return average
 
-function avgNums(...numbers) {
-    let myResult = 0;
-    if (numbers.length == 0) {
-        return console.log("Please enter at least one number.")
-    }
-    else {
-        for (i in numbers) {
-            myResult += numbers[i];
-        }
-        myResult = myResult / numbers.length;
-        console.log(myResult);
-        return myResult;
-    }
-}
+// function avgNums(...numbers) {
+//     let myResult = 0;
+//     if (numbers.length == 0) {
+//         return console.log("Please enter at least one number.")
+//     }
+//     else {
+//         for (i in numbers) {
+//             myResult += numbers[i];
+//         }
+//         myResult = myResult / numbers.length;
+//         console.log(myResult);
+//         return myResult;
+//     }
+// }
 
-avgNums(5, 10, 15);
-avgNums();
+// avgNums(5, 10, 15);
+// avgNums();
 
-// longest string - can use sort and .length:
+// // longest string - can use sort and .length:
 
-function longestText(...texts) {
-    texts.sort((a, b) => a.length - b.length);
-    console.log(texts[texts.length - 1]);
-    return texts[texts.length - 1]
-}
+// function longestText(...texts) {
+//     texts.sort((a, b) => a.length - b.length);
+//     console.log(texts[texts.length - 1]);
+//     return texts[texts.length - 1]
+// }
 
-longestText("d", "ela", "klsrfmerfelrfm", "", "dksm", "saoekcmddsjshdjshdjhshd", "dsdsdd", "23349");
+// longestText("d", "ela", "klsrfmerfelrfm", "", "dksm", "saoekcmddsjshdjshdjhshd", "dsdsdd", "23349");
 
-// create filter function for word length
+// // create filter function for word length
 
-function wordFilter(wordArr, wordLimit) {
-    let myResult = [];
-    for (const word of wordArr) {
-        if (word.length > wordLimit) {
-            myResult.push(word);
-        }
-        else {
+// function wordFilter(wordArr, wordLimit) {
+//     let myResult = [];
+//     for (const word of wordArr) {
+//         if (word.length > wordLimit) {
+//             myResult.push(word);
+//         }
+//         else {
 
-        }
-    }
-    console.log(myResult);
-    return myResult;
-}
+//         }
+//     }
+//     console.log(myResult);
+//     return myResult;
+// }
 
-wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 3);
-wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 1);
-wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 6);
+// wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 3);
+// wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 1);
+// wordFilter(["some", "cool", "words", "to", "try", "&", "figure", "out", "finally!"], 6);
+
+/* PT 2
+Use callback functions alongside Array methods to accomplish the following:
+Sort the array by age.
+Filter the array to remove entries with an age greater than 50.
+Map the array to change the “occupation” key to “job” and increment every age by 1.
+Use the reduce method to calculate the sum of the ages.
+Then use the result to calculate the average age.
+*/
+
+let pt2Data = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" }, { id: "48", name: "Barry", occupation: "Runner", age: "25" }, { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" }, { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" }, { id: "7", name: "Bilbo", occupation: "None", age: "111" }];
+
+// use sort method for age:
+
+let ageSort = pt2Data.sort((a, b) => Number(a.age) - Number(b.age));
+console.log(ageSort);
+

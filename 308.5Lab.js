@@ -27,3 +27,22 @@ sumNums(5, 10, 15);
 sumNums();
 
 
+// return average
+
+function avgNums(...numbers) {
+    let myResult = 0;
+    if (numbers.length == 0) {
+        return console.log("Please enter at least one number.")
+    }
+    else {
+        for (i in numbers) {
+            myResult += numbers[i];
+        }
+        myResult = myResult / numbers.length;
+        console.log(myResult);
+        return myResult;
+    }
+}
+
+avgNums(5, 10, 15);
+avgNums();

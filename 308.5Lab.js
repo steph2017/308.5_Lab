@@ -102,3 +102,15 @@ let jobageArr = pt2Data.map((oldObj) => newObj = {
     age: String(Number(oldObj.age) + 1)
 });
 console.log(jobageArr);
+
+// reduce practice - my issue is that after the first iteration, a becomes a number so you cannot do a.age. 
+// update: mdn acknowledged that issue - says i need to use copies to avoid...
+// update: just stop the .age on a ...
+
+let ageSum = pt2Data.reduce((a, b) => a + Number(b.age), 0);
+console.log(ageSum);
+
+// pt 5 average age:
+
+averAge = ageSum / pt2Data.length;
+console.log(averAge);

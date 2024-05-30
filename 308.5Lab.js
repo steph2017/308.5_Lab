@@ -116,10 +116,44 @@ averAge = ageSum / pt2Data.length;
 console.log(averAge);
 
 /**
-It is important to remember that when working with objects in JavaScript, we can either pass those objects into functions by value or by reference. This important distinction changes the way that functions behave, and can have large impacts on the way a program executes.
+It is important to remember that when working with objects in JavaScript, we can either pass those objects into functions 
+by value or by reference. This important distinction changes the way that functions behave,
+ and can have large impacts on the way a program executes.
 For this section, develop functions that accomplish the following:
 Take an object and increment its age field.
 Take an object, make a copy, and increment the age field of the copy. Return the copy.
-For each of the functions above, if the object does not yet contain an age field, create one and set it to 0. Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time.
-Thought experiment: since the Date object is an object, what would happen if we modified it in the copy of the object created in the second function using setTime() or another method? How could we circumvent potentially undesired behavior? 
+For each of the functions above, if the object does not yet contain an age field, create one and set it to 0. 
+Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time.
+Thought experiment: since the Date object is an object, what would happen if we modified it in the copy of the object
+ created in the second function using setTime() or another method? How could we circumvent potentially undesired behavior? 
 */
+
+// increment the object 
+
+function ageAdd(theObject) {
+    if (theObject.hasOwnProperty("age") && theObject.hasOwnProperty("updated_at")) {      // look for existing age key;
+        theObject.age += 1;
+        theObject.updated_at = Date(theObject.updated_at).getTime();
+    }
+    else if (theObject.hasOwnProperty("age")) {
+        theObject.age += 1;
+        theObject.updated_at = Date.now(); // creates new updated_at field
+
+    }
+    else if (theObject.hasOwnProperty("updated_at")) {
+        theObject.age = 0; //Creates new "age" field
+        theObject.updated_at = Date(theObject.updated_at).getTime();
+    }
+    else {
+        theObject.age = 0;
+        theObject.updated_at = Date.now();
+    }
+    console.log(theObject);
+    return theObject
+}
+
+let myObj = { age: 10, friend: true };
+ageAdd(myObj);
+console.log(myObj);
+
+// for the pt.3.2 - i would use the json stringfy and parse methods to make a copy - then apply the same logic, then return the copy .
